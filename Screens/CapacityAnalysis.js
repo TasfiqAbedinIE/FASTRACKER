@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component, useEffect, useState } from "react";
 import {
   Text,
   View,
@@ -55,7 +55,11 @@ function CapacityAnalysis(){
     }
 
     // console.log(iD, lineNo, fabricsType, remarks)
-
+  
+    useEffect(() => {
+        totalInterval=[]
+    }, [])
+  
     const onRefresh = React.useCallback(() => {
         setRefreshing(true);
         wait(2000).then(() => 
